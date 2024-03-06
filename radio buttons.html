@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>selectors</title>
+  <style>
+  .maincustom{
+	width:100%;
+	height:40px;
+	background-color:cyan;
+  }
+  .xxl{
+	text-align:center;
+	margin:0;
+	padding:0;
+  }
+  .subcustom{
+	width:100%;
+	height:60px;
+	background-color:gray;
+  }
+    input[type="checkbox"] {
+      display:none;
+    }
+
+    input[type="checkbox"] + label {
+      position:relative;
+      padding-left: 30px;
+      cursor:pointer;
+      display:inline-block;
+	  color:white;
+    }
+
+    input[type="checkbox"] + label:before {
+      content: "";
+      position:absolute;
+      left:0;
+      top:0;
+      width:20px;
+      height:20px;
+      border:2px solid #333;
+      background-color:#fff;
+    }
+
+    input[type="checkbox"]:checked + label:before {
+      background-color:blue;
+      border-color:#4CAF50;
+    }
+
+	.index{
+		width:100%;
+		height:30px;
+		margin-top:50px;
+		background-color:lightblue;
+	}
+	.xl{
+		text-align:center;
+		margin:0;
+		padding:0;
+	}
+    tbody tr:nth-child(3n + 2){
+      background-color:gray;
+    }
+
+    table {
+      border-collapse:collapse;
+      width: 50%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding:8px;
+      text-align:left;
+    }
+
+    th {
+      background-color:#4CAF50;
+      color:white;
+    }
+	
+	.elm{	
+		width:100%;
+		height:30px;
+		background-color:lightgreen;
+	}
+	li:not([class]) {
+		color:red;
+	}
+	.mnlistt{
+		width:20%;
+		height:auto;
+		background-color:gray;
+		margin:0;
+		border:2px solid green;
+	}
+
+  </style>
+</head>
+<body>
+	<!-- Custom checkbox -->
+	<div class="maincustom">
+		<h1 class="xxl">Create a custom checkbox and custom radio with help of selectors</h1>
+	</div>
+	<div class="subcustom">
+		<input type="checkbox" id="customCheckbox"/>
+		<label for="customCheckbox">Custom Checkbox</label>
+	</div>
+	
+	<!--Create a table and change background of tr having index 2, 5, 8, 11 so on-->
+		<div class="index">
+			<h2 class="xl">Create a table and change background of tr having index 2, 5, 8, 11 so on</h2>
+		</div>
+		  <table>
+			<thead>
+			  <tr>
+				<th>Header 1</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr><td>Data 1</td></tr>
+			  <tr class="test"><td>Data 2</td></tr>
+			  <tr class="test"><td>Data 3</td></tr>
+			  <tr class="test"><td>Data 4</td></tr>
+			  <tr class="test"><td>Data 5</td></tr>
+			  <tr class="test"><td>Data 6</td></tr>
+			  <tr class="test"><td>Data 7</td></tr>
+			  <tr class="test"><td>Data 8</td></tr>
+			  <tr class="test"><td>Data 9</td></tr>
+			  <tr class="test"><td>Data 10</td></tr>
+			  <tr class="test"><td>Data 11</td></tr>
+			  <tr class="test"><td>Data 12</td></tr>
+			  <tr class="test"><td>Data 13</td></tr>
+			  <tr class="test"><td>Data 14</td></tr>
+			  <tr class="test"><td>Data 15</td></tr>
+			  <tr class="test"><td>Data 16</td></tr>
+			  <tr class="test"><td>Data 17</td></tr>
+			</tbody>
+		  </table>
+		  
+		<!--Create another list and add classes to each item except one and change the color if the element has no class-->
+		<div class="elm">
+		<h3 class="large" style="text-align:center;">Create another list and add classes to each item except one and change the color if the element has no class</h3>
+	</div>
+    <ul class="mnlistt">
+        <li class="item1">Item1</li>
+        <li class="item2">Item2</li>
+        <li>Item3</li>
+        <li class="item5">Item5</li>
+		<li class="item6">Item6</li>
+		<li class="item7">Item7</li>
+		<li class="item8">Item8</li>
+		<li class="item9">Item9</li>
+		<li class="item10">Item10</li>
+		<li class="item11">Item11</li>
+		<li class="item12">Item12</li>
+		<li class="item13">Item13</li>
+    </ul>
+</body>
+</html>

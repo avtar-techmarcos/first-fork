@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>pseudo class</title>
+	<style>
+		p::first-letter{
+			color:red;
+			font-size:45px;
+		}
+		
+		.first-last-words::first-word {
+		  /* Your styles for the first word */
+		  font-weight: bold;
+		}
+
+		.first-last-words::last-word {
+		  /* Your styles for the last word */
+		  color: red;
+		}
+
+		
+	
+	</style>
+</head>
+<body>
+	<p style="background-color:cyan; color:white;">Welcome To Tech Marcos</p>
+	<p class="first-last-words">This is a sample sentence.</p>
+</body>	
+</html>

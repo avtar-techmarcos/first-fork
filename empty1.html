@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Pseudo class</title>
+		<style>
+			.body{
+				margin:0;
+				padding:0;
+			}
+			p:empty{
+				border:2px solid red;
+				height:100px;
+			}
+			.dem1, .dem2, .dem3, .dem4, .dem5, .dem6:empty{
+				border:2px solid green;
+				height:100px;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<p style="background-color:yellow;"></p>
+		<p class="dem1">welcome </p>
+		<p class="dem2">welcome </p>
+		<p class="dem3">welcome </p>
+		<p class="dem4">welcome </p>
+		<p class="dem5">welcome </p>
+		<p class="dem6" style="background-color:yellow;"></p>
+	
+	</body>
+</html>

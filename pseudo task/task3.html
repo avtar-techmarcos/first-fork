@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+		.input_box {
+	  position: relative;
+	  width: 100%;
+	}
+
+	.input_box input {
+	  width: 100%;
+	  border: none;
+	  outline: none;
+	  font-size: 25px;
+	  padding: 7px 0px;
+	}
+
+	.input_box label {
+	  position: absolute;
+	  left: 0px;
+	  font-size: 35px;
+	  top: 8px;
+	  pointer-events: none;
+	  transition: 0.2s;
+	}
+
+	.input_box input:focus + label,
+	.input_box input:valid + label {
+	  top: -15px;
+	  font-size: 18px;
+	  color: blue;
+	}
+  </style>
+</head>
+<body>
+	<div class="input_box">
+	  <input type="text" required>
+	  <label>Username</label>
+	</div>
+</body>
+</html>

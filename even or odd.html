@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Pseudo class</title>
+		<style>
+			.container .box1 p:nth-child(even){
+				border:2px solid red;
+			}
+			.container .box2 p:nth-child(odd){
+				border:2px solid green;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container" style="width:40%; height:auto; border:2px solid red;">
+			<div class="box1"style="border:2px solid green;">
+				</h3>Box1 Heading</h3>
+				<p>Box1 paragraph one</p>
+				<p>Box1 paragraph two</p>
+				<p>Box1 paragraph three</p>
+				<p>Box1 paragraph four</p>
+			</div>
+			<p>container paragraph one</p>
+			<p>container paragraph two</p>
+			<div class="box2"style="border:2px solid cyan;">
+				<p>Box2 paragraph one</p>
+				<p>Box2 paragraph two</p>
+				<p>Box2 paragraph three</p>
+			</div>
+		</div>
+	</body>
+</html>

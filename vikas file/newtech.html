@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+	<title>Tourism</title>
+	<style>
+		body{
+			margin:0;
+			padding:0;
+            font-family: 'Montserrat', sans-serif;
+		}
+		.dube{
+			width:100%;
+			background-color:#b6c8e3;
+		}
+		.head{
+			background-color:#b6c8e3;
+			max-width:1500px;
+			margin:auto;
+		}
+		.container{
+			margin:auto;
+			padding:10px 0;
+			width:90%;
+		}
+		 .clr{
+			clear:both;
+		 }
+		.nav{
+			width:80%;
+		}
+		.logo,.nav{
+			float:left;
+		}
+		.head .container::after{
+			content:"";
+			display:block;
+			clear:both;
+			width:100%;
+		}
+		.head .nav ul{
+			padding:0;
+			list-style-type:none;
+			float:right;
+			margin-right:-58px;
+			margin-top:20px;
+		}
+		.head .nav li{
+			float:left;
+		}
+		.head .nav li a{
+			text-decoration:none;
+			padding:10px 24px;
+			font-size:16px;
+			color:#000000;
+		}
+		.head .logo img{
+			max-width:130px;
+			margin-top:8px;
+			display:block;
+		}
+		.log1{
+			border:none;
+			border-radius:4px;
+			color:white;
+			padding:10px 22px;
+			cursor:pointer;
+			text-decoration:none;
+			display: inline-block;
+			margin-left:55px;
+			margin-top:8px;
+			background-color:#f3800c;
+		}
+		 
+		.mainhero{
+			width:100%;
+			background-color:#e8e8e7;
+		}
+		.subhero{
+			max-width:1500px;
+			margin:auto;
+			overflow:hidden;
+		}
+		.places{
+			width:80%;
+			height:auto;
+			margin:auto;
+			overflow:hidden;
+			margin-bottom:45px;
+		}
+		.mouse{
+			float:right;
+		}
+		.mouse img{
+			margin-top:60px;
+		}
+		.discover{
+			width:50%;
+			height:auto;
+			margin-top:85px;
+		}
+		.xxl{
+			font-size:58px;
+			color:#f3800c;
+			line-height:1.2;
+			font-weight:500;
+			margin:0;
+			padding:0;
+		}
+		.x-small{
+			font-size:25px;
+			color:#150a46;
+		}
+		.btn-wrapper .wrap1{
+			border:none;
+			border-radius:10px;
+			color:white;
+			padding:12px 20px;
+			cursor:pointer;
+			text-decoration:none;
+			display: inline-block;
+			margin-top:8px;
+			background-color:#f3800c;
+		} 
+		
+		.mainbox{
+			width:100%;
+			background-color:#e8e8e7;
+			overflow:hidden;
+		}
+		.subbox{
+			max-width:1500px;
+			margin:auto;
+		}
+		.destination{
+			width:90%;
+			height:auto;
+			margin:auto;
+			overflow:hidden;
+			margin-bottom:45px;
+		}
+		.Popular-text{
+			width:60%;
+			margin:auto;
+			text-align:center;
+		}
+		.xl{
+			margin:0;
+			padding:0;
+			font-weight:500;
+			color:#f3800c;
+			font-size:40px;
+		}
+		.lorem{
+			color:#150a46;
+			font-size:21px;
+			margin-top:10px;
+		}
+		.pro, .pro2, .pro3{
+			background-color:#ffffff;
+			width:32%;
+			height:auto;
+			padding-bottom:30px;
+			box-sizing: border-box;
+			float:left;
+			border-radius:15px;
+		}
+		.pro4, .pro5, .pro6{
+			background-color:#ffffff;
+			width:32%;
+			height:auto;
+			padding-bottom:30px;
+			box-sizing: border-box;
+			float:left;
+			border-radius:15px;
+		}
+		.pro4, .pro6 {
+			margin-top:30px;
+		}
+		.euro, .goa, .dubai, .Maldives, .Bali, .Cappadocia{
+			text-align:center;
+			margin-top:38px;
+		}
+		.euro img, .goa img, .dubai img, .Maldives img, .Bali img, .Cappadocia img{
+			width:150px;
+			height:100px;
+			border-radius:35%;
+			object-fit:cover;
+		}
+		.large{
+			text-align:center;
+			font-size:24px;
+			color:#f3800c;
+			margin-top:10px;
+		}
+		.btn2{
+			text-align:center;
+		}
+		.wrap2{
+			border:none;
+			border-radius:10px;
+			color:white;
+			padding:10px 12px;
+			cursor:pointer;
+			text-decoration:none;
+			display: inline-block;
+			margin-top:8px;
+			background-color:#f3800c;
+		}
+		.pro2:nth-child(2){
+			margin:0 2%;
+		}
+		.pro5{
+		  margin:0 2%;
+		  margin-top:30px;
+		}
+		
+		.mainfoot{
+			width:100%;
+			background-color:#000000;
+		}
+		.subfoot{
+			max-width:1500px;
+			margin:auto;
+			background-color:#000000;
+			overflow:hidden;
+		}
+		.foot1{
+			width:90%;
+			margin:auto;
+			overflow:hidden;
+		}
+		.foot1 li{
+			margin:8px 0px;
+			padding:0;
+			list-style-type:none;
+			font-size:17px;
+		}
+		.cont{
+			width:50%;
+			height:auto;
+			overflow:hidden;
+			float:left;
+		}
+		.eduu{
+			height:auto;
+			overflow:hidden;
+			margin-top:65px;
+		}
+		.get{
+			width:100%;
+		}
+		.medium{
+			color:#f3800c;
+			margin:0;
+			padding:0;
+			margin-top:20px;
+			font-size:24px;
+		}
+		.ispu{
+			color:white;
+			font-size:16px;
+			line-height:1.7;
+		}
+		.Resource{
+			float:left;
+			color:white;
+			
+		}
+		.small {
+			color:#f3800c;
+			font-size:18.72px;
+			margin:0;
+			padding:0;
+		}
+		.Resource ul{
+			padding-left:0px;
+		}
+		
+		.Features{
+			float:left;
+			margin-left:110px;
+			color:white;		
+		}
+		.Features ul{
+			padding-left:0px;
+		}
+	
+		.Upcoming{
+			float:left;
+			margin-left:110px;
+			color:white;	
+		}
+		.Upcoming ul{
+			padding-left:0px;
+		}
+
+		.anner{
+			width:45%;
+			height:auto;
+			float:right;
+			margin-top:52px;
+			
+		}
+		.viewe{
+			float:right;
+		}
+		.stay{
+			text-align:center;
+			font-size:45px;
+			color:white;
+			margin:0;
+			padding:0;
+			margin-right:87px;
+			padding-bottom:20px;
+		}
+		.follow{
+			width:50%;
+			float:left;
+		}
+		.follow h2{
+			text-align:center;
+			padding-top:30px;
+			color:#f3800c;
+		}
+		/*footer icon*/
+		.icon{
+			font-size:2rem;
+			text-align:center;
+		 }
+	    .icon i{
+		    margin:0px 15px;
+			color:#f3800c;
+		 }
+		.only{
+		  float:left;
+		 }
+	</style>
+</head>
+<body>
+										<!--Navbar-->
+	<header class="dube">
+		<div class="head">
+			<div class="container">
+				<div class="logo">
+					<img src="images/logo.png" alt="Logo">
+				</div>
+				<div class="nav">
+					<ul>
+						<li><a href="#">HOME</a></li>
+						<li><a href="#">ABOUT US</a></li>
+						<li><a href="#">SERVICES</a></li>
+						<li><a href="#">PACKAGES</a></li>
+						<li><a href="#">CONTACT US</a></li>
+					</ul>
+				</div>
+				<div class="btn">
+					<a href="#" class="log1">Login</a>
+				</div>
+			</div>
+		</div>
+		<div class="clr"></div>
+	</header>
+	
+										<!--hero section-->
+	<div class="mainhero">
+		<div class="subhero">
+			<div class="places">
+				<div class="mouse">
+					<img src="images/mouse.png" width="534" height="387" alt="Towns">
+				</div>
+				<div class="discover">
+					<h1 class="xxl">Discover the places<br>you've never been<br>before</h1>
+					<p class="x-small">Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit</p>
+					<div class="btn-wrapper">
+						<a href="#" class="wrap1">Read More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+												<!--Box-->
+	<div class="mainbox">
+		<div class="subbox">
+			<div class="destination">
+				<div class="Popular-text">
+					<h2 class="xl">Popular Destination</h2>
+					<p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+					<div class="techm">
+					<div class="pro-row1">
+						<div class="pro">
+							<div class="euro">
+								<img src="images/tour1.png" alt="Europe">
+							</div>
+							<h3 class="large">Europe</h3>
+							<ul style="margin-top:-12px; line-height:1.7;">
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+							</ul>
+							<div class="btn2">
+								<a href="#" class="wrap2">Read More</a>
+							</div>
+						</div>
+						<div class="pro2">
+							<div class="goa">
+								<img src="images/tour2.png" alt="Goa">
+							</div>
+							<h3 class="large">Europe</h3>
+							<ul style="margin-top:-12px; line-height:1.7;">
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+							</ul>
+							<div class="btn2">
+								<a href="#" class="wrap2">Read More</a>
+							</div>
+						</div>
+						<div class="pro3">
+							<div class="dubai">
+								<img src="images/tour3.png" alt="Dubai">
+							</div>
+							<h3 class="large">Dubai</h3>
+							<ul style="margin-top:-12px; line-height:1.7; ">
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+							</ul>
+							<div class="btn2">
+								<a href="#" class="wrap2">Read More</a>
+							</div>
+						</div>
+						<div class="pro4">
+							<div class="Maldives">
+								<img src="images/tour4.png" alt="Maldives">
+							</div>
+							<h3 class="large">Maldives</h3>
+							<ul style="margin-top:-12px; line-height:1.7; ">
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+							</ul>
+							<div class="btn2">
+								<a href="#" class="wrap2">Read More</a>
+							</div>
+						</div>
+						<div class="pro5">
+							<div class="Bali">
+								<img src="images/tour5.png" alt="Bali">
+							</div>
+							<h3 class="large">Bali</h3>
+							<ul style="margin-top:-12px; line-height:1.7; ">
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+							</ul>
+							<div class="btn2">
+								<a href="#" class="wrap2">Read More</a>
+							</div>
+						</div>
+						<div class="pro6">
+							<div class="Cappadocia">
+								<img src="images/tour6.png" alt="Cappadocia">
+							</div>
+							<h3 class="large">Cappadocia</h3>
+							<ul style="margin-top:-12px; line-height:1.7; ">
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+								<li>Eiffel Tower, France. The Eiffel Tower is one of</li>
+							</ul>
+							<div class="btn2">
+								<a href="#" class="wrap2">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+										<!--footer-->
+	<div class="mainfoot">
+		<div class="subfoot">
+			<div class="foot1">
+				<div class="cont">
+						<div class="get">
+							<h4 class="medium">Get in touch</h4>
+							<p class="ispu">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor<br>
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost<br>
+								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+						</div>
+							<div class="eduu">
+								<div class="Resource">
+									<h5 class="small">Resource</h5>
+									<ul>
+										<li>Tour</li>
+										<li>Customers</li>
+										<li>Pricing and Plans</li>
+										<li>New Features</li>
+										<li>Education</li>
+									</ul>
+								</div>
+								<div class="Features">
+									<h5 class="small">Features</h5>
+									<ul>
+										<li>Tour</li>
+										<li>Customers</li>
+										<li>Pricing and Plans</li>
+										<li>New Features</li>
+										<li>Education</li>
+									</ul>
+								</div>
+								<div class="Upcoming">
+									<h5 class="small">Upcoming</h5>
+									<ul>
+										<li>Tour</li>
+										<li>Customers</li>
+										<li>Pricing and Plans</li>
+										<li>New Features</li>
+										<li>Education</li>
+									</ul>
+								</div>
+						</div>
+				</div>
+						<div class="anner">
+							<div class="view">
+								<h6 class="stay">Stay in touch</h6>
+							</div>
+						</div>
+						
+						<div class="follow">
+							<h2>Follow us for new updates</h2>
+							<div class="icon">
+								<i class="fa-brands fa-facebook"></i>
+								<i class="fa-brands fa-square-twitter"></i>
+								<i class="fa-brands fa-instagram"></i>
+							</div>
+						</div>
+			</div>
+		</div>
+	</div>
+		<!--last footer-->
+			<div class="all">
+				<div class="right" style="text-align:center;">
+					<p>@ 2024 Fantasy tour. All right reserve</p>
+				</div>
+			</div>
+		
+		<!--end of last footer-->
+</body>
+</html>
