@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+	<title>Calculator</title>
+		<style>
+		body{
+			background-color:black;
+		}
+		input[type=text]{
+			width:500px;
+		}
+		input[type=button]{
+			width:100%;
+			padding:5px 20px;
+			border:none;
+			outline:none;
+			cursor:pointer;
+			font-size:20px;
+		}
+		h1{
+			color:white;
+			font-family:cambria;
+			font-size:20px;
+		}
+		</style>
+</head>
+<body>
+	<form name="myform">
+		<table  cellpadding="0" cellspacing="0" align="center">
+			<caption><h1>JAVASCRIPT CALCULATOR</h1></caption>
+					<tr>
+						<td colspan="4">
+							<input type="text" name="amn">
+						</td>
+					</tr>
+						<tr>
+							<td>
+								<input type="button" value="1" onclick="myform.amn.value+='1'">
+							</td>
+						
+							<td>
+								<input type="button" value="2" onclick="myform.amn.value+='2'">
+							</td>
+						
+							<td>
+								<input type="button" value="3" onclick="myform.amn.value+='3'">
+							</td>
+						
+							<td>
+								<input type="button" value="+" onclick="myform.amn.value+='+'">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" value="4" onclick="myform.amn.value+='4'">
+							</td>
+						
+							<td>
+								<input type="button" value="5" onclick="myform.amn.value+='5'">
+							</td>
+						
+							<td>
+								<input type="button" value="6" onclick="myform.amn.value+='6'">
+							</td>
+						
+							<td>
+								<input type="button" value="-" onclick="myform.amn.value+='-'">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" value="7" onclick="myform.amn.value+='7'">
+							</td>
+						
+							<td>
+								<input type="button" value="8" onclick="myform.amn.value+='8'">
+							</td>
+						
+							<td>
+								<input type="button" value="9" onclick="myform.amn.value+='9'">
+							</td>
+						
+							<td>
+								<input type="button" value="*" onclick="myform.amn.value+='*'">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="button" value="0" onclick="myform.amn.value+='0'">
+							</td>
+						
+							<td>
+								<input type="button" value="c" onclick="myform.amn.value=''">
+							</td>
+						
+							<td>
+								<input type="button" value="=" onclick="myform.amn.value=eval(myform.amn.value)">
+							</td>
+						
+							<td>
+								<input type="button" value="/" onclick="myform.amn.value+='/'">
+							</td>
+						</tr>
+		</table>
+	</form>
+</body>
+</html>
