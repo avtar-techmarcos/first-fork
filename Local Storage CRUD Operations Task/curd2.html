@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family:Arial, sans-serif;
+            margin:20px;
+        }
+		#registrationForm {
+			max-width: 600px;
+			margin: 20px auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		label {
+			display: block;
+			margin-bottom: 8px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 16px;
+			box-sizing: border-box;
+		}
+		input[type="email"] {
+			width:100%;
+			padding:8px;
+			margin-bottom:16px;
+			box-sizing:border-box;
+		}
+		button {
+			padding: 8px 16px;
+			background-color: #3498db;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #2980b9;
+		}
+
+		#registrationTable {
+			width:100%;
+			margin-top:20px;
+			border-collapse:collapse;
+		}
+
+		#registrationTable th, #registrationTable td {
+			border:1px solid #ddd;
+			padding:10px;
+			text-align:left;
+		}
+
+		#registrationTable th {
+			background-color:#3498db;
+			color:#fff;
+		}
+
+		#registrationTable tr:nth-child(even) {
+			background-color:#f2f2f2;
+		}
+
+		#registrationTable tr:hover {
+			background-color:#e0e0e0;
+		}
+
+
+
+.edit-form {
+			position:fixed;
+			top:50%;
+			left:50%;
+			transform:translate(-50%, -50%);
+            display: none;
+			background-color:lightgray;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .edit-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .edit-form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .edit-form button {
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .edit-form button:hover {
+            background-color: #2980b9;
+        }
+
+    </style>
+</head>
+		<body>
+
+			<h2 style="text-align:center; color:lightgreen;">Registration Form</h2>
+
+			<form id="registrationForm">
+				<label for="name">Name:</label>
+				<input type="text" id="name" required>
+
+				<label for="class">Class:</label>
+				<input type="text" id="class" required>
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" required>
+
+				<button type="button" onclick="addEntry()">Add</button>
+			</form>
+			
+			<div class="edit-form" id="editForm">
+				<label for="editName">Name:</label>
+				<input type="text" id="editName" placeholder="Enter Name">
+
+				<label for="editClass">Class:</label>
+				<input type="text" id="editClass" placeholder="Enter Class">
+
+				<label for="editEmail">Email:</label>
+				<input type="text" id="editEmail" placeholder="Enter Email">
+
+				<button onclick="updateEntry()">Update</button>
+			</div>
+
+		<table id="registrationTable">
+		   
+		</table>
+		
+			<script src="curd.js"></script>
+		</body>
+</html>
+
