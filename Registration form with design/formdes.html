@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+    <style>
+		*{
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: "Poppins", sans-serif;
+	}
+	body {
+	  height:auto;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  padding: 20px;
+	  background: #333333;
+	}
+	.container {
+	  position: relative;
+	  max-width: 850px;
+	  width: 100%;
+	  background: #fff;
+	  padding: 25px;
+	  border-radius: 8px;
+	  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	}
+	.xxl {
+	  font-size: 1.5rem;
+	  color: #333;
+	  font-weight: 500;
+	  text-align: center;
+	  margin-top:2px;
+	}
+	.container .form {
+	  margin-top: 30px;
+	}
+	.subcont{
+		max-width:350px;
+		height:100vh;
+		margin-top:55px;
+	}
+	.form{
+		max-width:425px;
+		float:right;
+	}
+	.txtt{
+		position: absolute;
+		top:500px;
+		left:0px;
+		padding:10px;
+	}
+	.form .input-box {
+	  width: 100%;
+	  margin-top: 20px;
+	  position:relative;
+	}
+	.input-box label {
+	  color: #333;
+	}
+	.form :where(.input-box input, .select-box) {
+	  position: relative;
+	  height: 50px;
+	  width: 100%;
+	  outline: none;
+	  font-size: 1rem;
+	  color: #707070;
+	  margin-top: 8px;
+	  border: 1px solid #ddd;
+	  border-radius: 6px;
+	  padding:0px 15px;
+	}
+	.input-box input:focus {
+	  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	}
+	.form .column {
+	  display:flex;
+	  column-gap:15px;
+	}
+	.form .gender-box {
+	  margin-top: 20px;
+	  position:relative;
+	}
+	.gender-box h3 {
+	  color: #333;
+	  font-size: 1rem;
+	  font-weight: 400;
+	  margin-bottom: 8px;
+	}
+	.form :where(.gender-option, .gender) {
+	  display: flex;
+	  align-items: center;
+	  column-gap: 50px;
+	  flex-wrap: wrap;
+	}
+	.form .gender {
+	  column-gap: 5px;
+	}
+	.gender input {
+	  accent-color: rgb(130, 106, 251);
+	}
+	.form :where(.gender input, .gender label) {
+	  cursor: pointer;
+	}
+	.gender label {
+	  color: #707070;
+	}
+	.address :where(input, .select-box) {
+	  margin-top: 15px;
+	}
+	.select-box select {
+	  height: 100%;
+	  width: 100%;
+	  outline: none;
+	  border: none;
+	  color: #707070;
+	  font-size: 1rem;
+	}
+	.form button {
+	  background-color: #04AA6D;
+	  color: white;
+	  padding: 14px 20px;
+	  margin: 28px 0;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	  opacity: 0.9;
+	}
+	.form button:hover {
+	  background: rgb(88, 56, 250);
+	}
+	
+	input + .error{
+		background-color:#ffffff;
+		position:absolute;
+		top:90%;
+		left:0;
+		padding:5px 10px;
+		border-radius:5px;
+		font-size:12px;
+		color:red;
+		z-index:999;
+	}
+	</style>
+  </head>
+  <body>
+    <section class="container">
+    <h1 class="xxl">Registration Form</h1>
+    <form action="#" class="form" id="frm" method="post">
+        <div class="input-box">
+            <label>Full Name:</label>
+            <input type="text" placeholder="Enter full name" name="full_name" >
+        </div>
+
+        <div class="input-box">
+            <label>Email Address:</label>
+            <input type="email" placeholder="Enter email address" name="email" >
+        </div>
+
+        <div class="column">
+            <div class="input-box">
+                <label>Phone Number:</label>
+                <input type="tel" placeholder="Enter phone number" name="phone" >
+            </div>
+            <div class="input-box">
+                <label>Birth Date:</label>
+                <input type="date" placeholder="Enter birth date" name="birthdate" >
+            </div>
+        </div>
+        <div class="gender-box">
+            <h3>Gender:</h3>
+            <div class="gender-option">
+                <div class="gender">
+                    <input type="radio" id="check-male" name="gender" value="male" >
+                    <label for="check-male">male</label>
+                </div>
+                <div class="gender">
+                    <input type="radio" id="check-female" name="gender" value="female" >
+                    <label for="check-female">Female</label>
+                </div>
+            </div>
+        </div>
+		<div class="input-box">
+			<label>Address:</label>
+            <input type="text" placeholder="Enter street address" name="address1">
+		</div>
+        <div class="input-box address">
+            <div class="column">
+                <div class="select-box">
+                    <select name="country" >
+                        <option hidden>Country</option>
+                        <option value="America">America</option>
+                        <option value="Japan">Japan</option>
+                        <option value="India">India</option>
+                        <option value="Nepal">Nepal</option>
+                    </select>
+                </div>
+                <input type="text" placeholder="Enter your city" name="city">
+            </div>
+        </div>
+        <button type="submit" class="signup">Submit</button>
+    </form>
+    <div class="subcont" style="position:relative;">
+        <div class="pic">
+            <img src="https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="350" height="680">
+            <div class="txtt">
+                <h3 class="xl" style="color:white; line-height:2.5;">Welcome To Signup Form</h3>
+                <p class="small" style="color:white;">A paragraph is a series of sentences that are organized and coherent and are<br>all related to a single.<br></p>
+            </div>
+        </div>
+    </div>
+</section>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
+<script>
+    $(document).ready(function(){
+        $('#frm').validate({
+            rules:{
+                full_name:"required",
+                email:{
+                    required:true,
+                    email:true
+                },
+                phone:{
+                    required:true,
+                    digits:true,
+					minlength:10
+                },
+                birthdate:{
+                    required:true,
+                    date:true
+                },
+                gender:{
+                    required:true
+                },
+                address1:"required",
+                country:"required",
+                city:"required"
+            },
+            messages:{
+                full_name:"Please enter your name",
+                email:{
+                    required:"Please enter email",
+                    email:"Please enter valid email",
+                },
+                phone:{
+                    required:"Please enter your phone number",
+                    digits:"Please enter valid phone number",
+						
+                },
+                birthdate:{
+                    required:"Please enter your birth date",
+                    date:"Please enter a valid date"
+                },
+                gender:"Please select your gender",
+                address1:"Please enter your address",
+                country:"Please select your country",
+                city:"Please enter your city"
+            },
+            submitHandler:function(form){
+                form.submit();
+            }
+        });
+    });
+</script>
+  </body>
+</html>
