@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First Site</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<style>
+		.navbar{
+			width:90%;
+			margin:auto;
+		}
+		#myNavbar ul li a{
+			color:black;
+			font-size:17px;
+			padding:15px 25px;
+		}
+		#icon{
+			color:black;
+		}
+		.text{
+			width:80%;
+			height:400px;
+			background-color:#ffffff;
+			padding-left:25px;
+			border-left:2px solid orange;
+		}
+		.xxl{
+			font-size:72px;
+		}
+		.xs{
+			font-size:17px;
+		}
+		
+		#slid{
+			background-color:#e2d2bd;
+			margin-top:65px;
+			height:300px;
+		}
+		.xl{
+		margin-left:30px;
+		font-size:50px;
+		}
+		.man{
+			width:100%;
+		}
+	</style>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
+  <body>
+		<nav class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				  <a class="navbar-brand" id="icon" href="#">
+					<i class="fa-solid fa-align-justify"></i>
+				  </a>
+				  <a class="navbar-brand text-muted" id="lg" href="#">Trip</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+				  <ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">places <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="#">places-1</a></li>
+					  <li><a href="#">places-2</a></li>
+					  <li><a href="#">Places-3</a></li>
+					</ul>
+				</li>
+					<li><a href="#">Book Hotel</a></li>
+					<li><a href="#">Services</a></li>
+				  </ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section class="banner">
+			<div class="container-fluid">
+				<div class="row" id="txt">
+					<div class="inner" style="position:relative;">
+						<div class="col-md-7 pull-right">
+							<img class="img-responsive" src="pic2.jpg" alt="Travler">
+						</div>
+						<div class="col-md-5">
+							<div class="text" style="position:absolute; top:100px; left:262px;">
+								<h1 class="xxl">Explore The<br>World Now </h1>
+								<P class="xs">Switzerland, federated country of central Europe.<br>Switzerland’s administrative capi…A landlocked country of towering mountains, deep Alpine lakes, grassy</p>
+								<div class="exp" style="text-decoration:underline; font-size:18px; margin-top:25px;">
+									<a href="#" role="button">Explore</a>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<div class="container-fluid" id="slid">
+			<div class="row">
+				 <div class="col-md-12">
+					<h2 class="xl">Places to your next<br>travel</h2>
+				 </div>
+			</div>
+			<div class="container-fluid">
+				<div class="row" style="margin-top:40px;">
+					<div class="col-md-3">
+						<img src="man1.jpg" title="man" class="man" alt="Image 1">
+					</div>
+					<div class="col-md-3">
+						<img src="man2.jpg" title="man" class="man" alt="Image 2">
+					</div>
+					<div class="col-md-3">
+						<img src="man3.jpg" title="man" class="man" alt="Image 3">
+					</div>
+					<div class="col-md-3">
+						<img src="man4.jpg" title="man" class="man" alt="Image 4">
+					</div>
+				</div>
+			</div>
+		</div>
+  </body>
+</html>

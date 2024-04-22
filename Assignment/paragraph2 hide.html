@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Show/Hide Paragraph</title>
+<style>
+	body {
+  font-family: Arial, sans-serif;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration:none;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+#myParagraph{
+  display: none;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.show {
+  display: block;
+}
+	
+</style>
+</head>
+<body>
+
+<a href="#" id="toggleButton" class="button" onclick="toggleParagraph()">Toggle Paragraph</a>
+<p id="myParagraph" style="display: none;">Your words matter, and our paraphrasing tool is designed to ensure you use<br> the right ones. With unlimited Custom modes and 8 predefined modes, Paraphraser<br>lets you rephrase text countless ways. Our product will improve your fluency<br> while also ensuring you have the appropriate vocabulary, tone, and style for any occasion.</p>
+
+<script>
+function toggleParagraph() {
+  var paragraph = document.getElementById("myParagraph");
+  if (paragraph.style.display === "none") {
+    paragraph.style.display = "block";
+  } else {
+    paragraph.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

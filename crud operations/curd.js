@@ -36,9 +36,9 @@
     function loadEntries() {
         var entries = JSON.parse(localStorage.getItem('entries')) || [];
 
-        var table = document.getElementById('tbody');
+        var table = document.getElementById('registrationTable');
 
-        table.innerHTML = '<tr><th>Select</th><th>Name</th><th>Class</th><th>Email</th><th>Action</th></tr>';
+        table.innerHTML = '<tr><th>Name</th><th>Class</th><th>Email</th><th>Action</th></tr>';
 
         for (var i = 0; i < entries.length; i++) {
             var entry = entries[i];

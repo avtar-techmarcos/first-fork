@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>flex box</title>
+	<style>
+	.hcontainer{
+		display:flex;
+		text-align:center;
+		border:2px solid #c5dcc6;
+	}
+	.box{
+		flex-grow:4;
+		background-color:#C5857B;
+		height:150px;
+		border:2px solid #c5dcc6;
+	}
+	.container{
+		display:flex;
+		border:2px solid #c5dcc6;
+	}
+	.big, .big2{
+		flex-grow:6;
+		background-color:grey;
+		border:2px solid #c5dcc6;
+	}
+	.big{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+	.small{
+		width:130px;
+		height:130px;
+		background-color:#FCF26F;
+	}
+	.con1{
+		height:125px;
+		box-sizing:border-box;
+		border:3px solid #c5dcc6;
+		background-color:#8C9866;
+	}
+</style>
+</head>
+<body>
+<main>
+	<div class="mcontainer">
+		<div class="hcontainer">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		<div class="container">
+			<div class="big">
+				<div class="small"></div>
+			</div>
+			<div class="big2">
+				<div class="con1"></div>
+				<div class="con1"></div>
+				<div class="con1"></div>
+				<div class="con1"></div>
+			</div>
+		</div>
+	</div>
+</main>
+</body>
+</html>

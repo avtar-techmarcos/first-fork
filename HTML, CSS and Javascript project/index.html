@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>first HTML CSS JS</title>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+			box-sizing:border-box;
+			font-family: 'Montserrat', sans-serif;
+        }
+		.head{
+			width:100%;
+			box-sizing:border-box;
+			background-color:#f2f2f2;
+		}
+		.container{
+			margin:auto;
+			width:90%;
+			background-color:#f2f2f2;
+		}
+		.logo h1{
+			font-weight:100;
+			cursor:pointer;
+		}
+		.nav{
+			width:70%;
+			margin:auto;
+			margin-left:20%;
+		}
+		.logo,.nav{
+			float:left;
+		}
+		.head .container::after{
+			content:"";
+			display:block;
+			clear:both;
+			width:100%;
+		}
+		.head .nav ul{
+			padding:0;
+			list-style-type:none;
+			float:right;
+			margin-top:30px;
+		}
+		.head .nav li{
+			float:left;
+		}
+		.head .nav li a{
+			text-decoration:none;
+			padding:10px 28px;
+			font-size:16px;
+			color:#000000;
+			transition:.7s ease;
+		}
+		.nav ul a:hover{
+			background-color:#c5d8f5;
+		}
+		.user i{
+			font-size:40px;
+			cursor: pointer;			
+		}
+		.user {
+            position:relative;
+            margin-top:10px;
+			float:right;
+			padding:10px;
+        }
+        .user ul {
+            list-style-type:none;
+            padding:0;
+            margin:0;
+            position:absolute;
+            background-color:lightblue;
+            border:2px solid;
+            display:none;
+            right:0;
+            top:50px;
+            width:175px;
+			z-index: 999;
+        }
+        .user li {
+            text-align:center;
+            padding:10px;
+        }
+        .user a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 16px;
+        }
+        .user a:hover {
+            color: #ffffff;
+        }
+		
+		.hero{
+			width:100%;
+			box-sizing:border-box;
+			background-color:#3b7389f2;
+		}
+		.mainheading{
+			width:90%;
+			overflow:hidden;
+			height:auto;
+			margin:auto;
+			position:relative;
+		}
+		.button-row{
+			width:40%;
+			float:right;
+			margin:45px;
+			text-align:right;
+		}
+		.button {
+            padding:10px 20px;
+            text-decoration:none;
+            color:#fff;
+            background-color:#cc7274;
+            border-radius:5px;
+            margin:0px 15px;
+            display:inline-block;
+            text-align:center;
+            cursor:pointer;
+        }
+		.xl{
+			width:45%;
+			float:left;
+			font-weight:100;
+			color:#ffffff;
+			font-size:45px;
+		}
+		.large{
+			font-size:35px;
+			font-weight:300;
+			text-align:center;
+			color:#026992;
+		}
+		
+        
+		.calculator-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			display:none;
+        }
+		.maincal{
+			display:block;
+		}
+        #calculator-content {
+            text-align: center;
+        }
+
+        #calculator-content input,
+        #calculator-content button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+		
+	.maintbh{
+		max-width:100%;
+		min-height:450px;
+		overflow:hidden;
+		background: white;
+	}
+	table{
+		width:90%;
+		height:auto;
+		margin:auto;
+		background: #012B39;
+		border-radius: 0.25em;
+		border-collapse: collapse;
+		}
+		
+.maintbh table {
+		margin-top: 10px !important;
+		}
+		
+		th {
+		  border-bottom: 1px solid #364043;
+		  color: #E2B842;
+		  font-size: 0.85em;
+		  font-weight: 600;
+		  padding: 0.5em 1em;
+		  text-align: left;
+		}
+		td {
+		  color: #fff;
+		  font-weight: 400;
+		  padding: 0.65em 1em;
+		}
+		.disabled td {
+		  color: #4F5F64;
+		}
+		tbody tr {
+			color:white;
+			transition: background 0.25s ease;
+		}
+		tbody tr:hover {
+			background: #014055;
+		}
+		
+		
+		.rendom {
+			max-width: 350px;
+			margin: 20px auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			display:none;
+		}
+		.registration{
+			display:block;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 8px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 16px;
+			box-sizing: border-box;
+		}
+		input[type="email"] {
+			width:100%;
+			padding:8px;
+			margin-bottom:16px;
+			box-sizing:border-box;
+		}
+		button {
+			padding: 8px 16px;
+			background-color: #3498db;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		.button-row2{
+			text-align:center;
+		}
+		.button-row3{
+			margin-left:1355px;
+		}
+		button:hover {
+			background-color: #2980b9;
+		}
+
+		#registrationTable {
+			width:100%;
+			margin-top:20px;
+			border-collapse:collapse;
+		}
+
+		#registrationTable th, #registrationTable td {
+			border:1px solid #ddd;
+			padding:10px;
+			text-align:left;
+		}
+
+		#registrationTable th {
+			background-color:#3498db;
+			color:#fff;
+		}
+
+		#registrationTable tr:nth-child(even) {
+			background-color:#f2f2f2;
+		}
+
+		#registrationTable tr:hover {
+			background-color:#e0e0e0;
+		}
+		
+	
+		.footer{
+			width:100%;
+			margin-top:50px;
+			background:#3b7389f2;
+			padding:30px 0px;
+			text-align:center;
+		}
+
+		.footer .row{
+			margin:1% 0%;
+			padding:0.6% 0%;
+		}
+
+		.footer .row a{
+			text-decoration:none;
+			color:white;
+			transition:0.5s;
+		}
+		.footer .row{
+			color:white;
+		}
+		.footer .row ul li{
+			display:inline-block;
+			margin:0px 30px;
+			font-size:20px;
+		}
+
+		.footer .row a i{
+			font-size:24px;
+			margin:0% 1%;
+		}
+    </style>
+</head>
+<body>
+	<div class="head">
+		<div class="container">
+			<div class="logo">
+				<h1>Logo</h1>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">SERVICES</a></li>
+					<li><a href="#">PACKAGES</a></li>
+					<li><a href="#">CONTACT US</a></li>
+				</ul>
+			</div>
+			<div class="user">
+				<i class="fa-solid fa-user" onclick="toggleProfileMenu()"></i>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">LogIn</a></li>
+                </ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="hero">
+		<div class="mainheading">
+			<h2 class="xl">Create Students Table</h2>
+			<div class="button-row">
+				<a href="#" class="button">Filter</a>
+				<a href="#" class="button" id="calculator" onclick=showCal()>Calculator</a>
+			</div>
+		</div>
+	</div>
+	<div class="calculator-container" id=cal>
+		<div id="calculator-content">
+			<h2>Calculator</h2>
+			<input type="text" id="result" readonly>
+			<br>
+			<button onclick="appendToResult('1')">1</button>
+			<button onclick="appendToResult('2')">2</button>
+			<button onclick="appendToResult('3')">3</button>
+			<button onclick="appendToResult('+')">+</button>
+			<br>
+			<button onclick="appendToResult('4')">4</button>
+			<button onclick="appendToResult('5')">5</button>
+			<button onclick="appendToResult('6')">6</button>
+			<button onclick="appendToResult('-')">-</button>
+			<br>
+			<button onclick="appendToResult('7')">7</button>
+			<button onclick="appendToResult('8')">8</button>
+			<button onclick="appendToResult('9')">9</button>
+			<button onclick="appendToResult('*')">*</button>
+			<br>
+			<button onclick="appendToResult('0')">0</button>
+			<button onclick="clearResult()">C</button>
+			<button onclick="calculateResult()">=</button>
+			<button onclick="appendToResult('/')">/</button>
+		</div>
+	</div>
+	
+	<div class="maintbh">
+		<div class="box">
+			<form class='rendom' id="registrationForm">
+				<label for="name">Name:</label>
+				<input type="text" id="name" required>
+
+				<label for="class">Class:</label>
+				<input type="text" id="class" required>
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" required>
+				<div class="button-row2">
+				<button type="button" onclick="addData()">Add</button>
+			</div>
+			</form>
+			
+		</div>
+		<div class="button-row3" style="margin-top:12px;">
+			<button type="button" onclick="showForm();">Add User</button>
+		</div>
+		
+			<table>
+			  <thead id=thead>
+				<tr><th>Select</th>
+					<th>Name</th>
+					<th>Class</th>
+					<th>E-mail</th>
+					<th>Options</th>
+				</tr>
+			</thead>
+			  <tbody class=tbody id=row-wrapper>
+
+			</tbody>
+			</table>
+	</div>
+
+	<footer>
+		<div class="footer">
+			<div class="row">
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-youtube"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+			</div>
+
+			<div class="row">
+				<ul>
+					<li><a href="#">Contact us</a></li>
+					<li><a href="#">Our Services</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">Career</a></li>
+				</ul>
+			</div>
+
+			<div class="row">
+				TechMarcos Copyright © 2024 Tech - All rights reserved || Designed By: Vikas
+			</div>
+		</div>
+	</footer>
+	<!--End Of Footer -->
+				
+				
+				
+<script src="LocalStorage.js"></script>
+
+	<script>
+	let form=document.getElementById('registrationForm')
+	
+	function showForm(){
+		form.classList.toggle('registration')
+	}
+	
+	  const calculator=document.getElementById('cal')
+	  function showCal(){
+		calculator.classList.toggle('maincal')
+	  }
+	  
+	  function toggleProfileMenu() {
+            var profileMenu = document.querySelector('.user ul');
+            profileMenu.style.display = (profileMenu.style.display === 'none' || profileMenu.style.display === '') ? 'block' : 'none';
+        }
+		
+      
+	
+    function appendToResult(value) {
+        var resultInput = document.getElementById('result');
+        resultInput.value += value;
+    }
+
+    function clearResult() {
+        var resultInput = document.getElementById('result');
+        resultInput.value = '';
+    }
+
+    function calculateResult() {
+        var resultInput = document.getElementById('result');
+        try {
+            resultInput.value = eval(resultInput.value);
+        } catch (error) {
+            resultInput.value = 'Error';
+        }
+    }
+    </script>
+</body>
+</html>

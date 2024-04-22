@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Display</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .user-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #user-name {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .loading-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .loading-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random User Display</h1>
+        <div class="user-info">
+            <p id="user-name">Loading...</p>
+        </div>
+        <button class="loading-button" onclick="displayRandomUserName()">Load Random User</button>
+    </div>
+
+    <script>
+        function fetchRandomUser() {
+            return new Promise((resolve, reject) => {
+                fetch(`https://randomuser.me/api/`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch user data');
+                    }
+                    return response.json();
+                })
+                .then(userData => {
+                    resolve(userData.results[0]);
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                    reject(error);
+                });
+            });
+        }
+
+        function displayRandomUserName() {
+            fetchRandomUser()
+            .then(userName => {
+                if (userName) {
+                    document.getElementById('user-name').innerText = `${userName.name.first} ${userName.name.last}`;
+                } else {
+                    document.getElementById('user-name').innerText = 'No user data available.';
+                }
+            })
+            .catch(error => {
+                console.error('Error displaying user data:', error);
+            });
+        }
+
+        displayRandomUserName();
+    </script>
+</body>
+</html>

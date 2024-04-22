@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Even/Odd Rows</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width:100%;
+	margin-top:25px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  .even {
+    background-color:lightgreen;
+  }
+  .btn{
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	text-decoration:none;
+  }
+</style>
+</head>
+<body>
+<a href="#" class="btn" onclick="generateRows()">Generate Rows</a>
+<table id="myTable">
+  <thead>
+    <tr>
+      <th>Row Number</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+function generateRows() {
+  var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+  table.innerHTML = ''; // Clear existing rows
+  for (var i = 1; i <= 10; i++) {
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.textContent = i;
+    cell2.textContent = "Row " + i + " Content";
+    if (i % 2 === 0) {
+      row.className = "even";
+    }
+  }
+}
+</script>
+</body>
+</html>

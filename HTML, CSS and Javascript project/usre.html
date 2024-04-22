@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice-Gen 15 April 2024</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+		:root{
+  --light: #ffffff;
+  --dark: #000000;
+  --primary-color: #EFF3F6;
+  --ascant-color: #f8fafc;
+  --border-color: #ecf1f6;
+  --btn-text: #0a63d8;
+  --primary-text: #6f7d93;
+  --secondary-text: #c5d0dd;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+html , body{
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+}
+.left{
+  float: left;
+  width: 18%;
+  height: 100%;
+  /* background-color: red; */
+}
+.right{
+  float: right;
+  width: 82%;
+  height: 100%;
+}
+.navbar{
+  padding: 20px;
+  display: flex;
+  padding-left: 0;
+  justify-content: space-between;
+}
+.nav-btn-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Button styling section */
+.btn{
+  text-decoration: none;
+  color: var(--dark);
+  background: var(--light);
+  padding: 9px 13px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-theme{
+  background: var(--btn-text);
+  color: var(--light);
+}
+.btn:disabled{
+  background: #0a63d871;
+  cursor: not-allowed;
+}
+.drag-btn{
+  font-size: 1.7rem;
+  cursor: pointer;
+  padding: 5px;
+}
+.btn-wrapper{
+  text-align: right;
+  .btn{
+      color: var(--btn-text);
+      background: transparent;
+      font-weight: 600;
+      font-size: 1rem;
+  }
+}
+
+
+/* Text size styling */
+.text-md{
+  font-size: 1.7rem;
+}
+.text-xl{
+  font-size: 2rem;
+}
+
+/* Form styling  */
+.form-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.form-wrapper{
+  width: 100%;
+  padding: 20px;
+  background-color: var(--light);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  box-shadow: 0 0 20px -17px #505050;
+}
+.seventh{
+  flex: 0 0 calc(100% - (100%/3) - 1.2rem);
+}
+.input-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.half{
+  flex: 0 0 calc(100% / 2 - .5rem);
+}
+.full{
+  flex: 0 0 100%;
+  /* background-color: yellow; */
+}
+.third{
+  flex: 0 0 calc(100% / 3 - .7rem);
+  /* height: 100%; */
+}
+.d-flex{
+  display: flex;
+  justify-content: space-between;
+}
+.form-label{
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 7px;
+  color: #79869a;
+}
+.form-input{
+  display: block;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 15px 10px;
+  background: var(--ascant-color);
+  border: none;
+  outline: none;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+}
+.table-wrapper .form-input{
+  background: var(--light);
+}
+.form-input::placeholder{
+  color: var(--secondary-text);
+  font-weight: 400;
+}
+
+
+/* add item form tabel style */
+.table-wrapper{
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: collapse;
+  background: var(--ascant-color);
+}
+.t-head th{
+  padding: 20px 0;
+  text-align: left;
+  padding-left: 10px;
+  background: var(--primary-color);
+}
+.t-body tr:nth-child(1) td{
+  padding-top: 20px;
+}
+.t-head th:nth-child(1){
+  padding-left: 10px;
+}
+.t-body td{
+  padding: 3px;
+}
+.t-body td:nth-child(2){
+  width: 25%;
+}
+.t-body td:nth-last-child(1){
+  padding-right: 10px;
+}
+.t-body td:nth-child(3){
+  width: 30%;
+}
+.t-body td:nth-child(5){
+  width: 10%;
+}
+.table-row:hover {
+  background-color: #d4e3ff44;
+}
+#company_form{
+  height: 80px;
+  transition: all ease-in-out .3s;
+}
+#toggle_btn:hover #company_form{
+  background-color: red;
+}
+	</style>
+</head>
+<body>
+    <aside class="left">
+        <div class=""></div>
+    </aside>
+    <main class="right">
+        <header>
+            <nav class="navbar">
+                <div class="nav-btn-wrapper">
+                    <a href="#" class="btn" title="Back"><i class="ri-arrow-left-line"></i></a>
+                    <span class="text-md">Create Invoice</span>
+                </div>
+                <div class="nav-btn-wrapper">
+                    <a href="#" class="btn" title="View"><i class="ri-eye-line"></i></a>
+                    <a href="#" class="btn" title="View">Save to Draft</a>
+                    <button type="button" class="btn btn-theme" title="View" disabled>Save and Continue</button>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <form action="invoice" method="post" class="form-container">
+                <div class="seventh form-container">
+                    <!--! Company form Start-->
+                    <div class="form-wrapper" id="company_form">
+                        <!-- Company form insert here -->
+                        <div class="d-flex">
+                            <h1 class="text-md">Company Information & Details</h1>
+                            <button type="button" class="btn text-xl" id="toggle_btn" title="Toggle Dropdown"><i class="ri-arrow-drop-down-line"></i></button>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-wrapper third">
+                                <label for="company_name" class="form-label">Company Name</label>
+                                <input type="text" class="form-input" id="company_name">
+                            </div>
+                            <div class="input-wrapper third">
+                                <label for="phone_no" class="form-label">Phone Number</label>
+                                <input type="number" class="form-input" id="phone_no">
+                            </div>
+                            <div class="input-wrapper third">
+                                <label for="zip" class="form-label">Zip Code</label>
+                                <input type="number" class="form-input" id="zip">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-wrapper full">
+                                <label for="address" class="form-label">Address :</label>
+                                <textarea type="text" class="form-input" id="address"></textarea>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-wrapper half">
+                                <label for="city" class="form-label">City</label>
+                                <select name="city" class="form-input" id="city">
+                                    <option value="">City1</option>
+                                    <option value="">City2</option>
+                                    <option value="">City3</option>
+                                </select>
+                            </div>
+                            <div class="input-wrapper half">
+                                <label for="state" class="form-label">State</label>
+                                <select name="state" class="form-input" id="state">
+                                    <option value="">state1</option>
+                                    <option value="">state2</option>
+                                    <option value="">state3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--! Company form End -->
+
+                    <!-- ! Bill main form start -->
+                    <div class="form-wrapper">
+                        <h3 class="text-md">Invoice</h3>
+                        <div class="input-group">
+                            <div class="input-wrapper half">
+                                <label for="invoice_no" class="form-label">Invoice Number</label>
+                                <input type="number" class="form-input" id="invoice_no">
+                            </div>
+                            <div class="input-wrapper half">
+                                <label for="refrence_no" class="form-label">Refrence Number</label>
+                                <input type="number" class="form-input" id="refrence_no">
+                            </div>
+                        </div>
+                        <!-- table For add item form -->
+                        <table class="table-wrapper">
+                            <thead class="t-head">
+                                <tr class="table-row">
+                                    <!-- <th>Move</th> -->
+                                    <th colspan="2">Item</th>
+                                    <th>Description</th>
+                                    <th>Rate</th>
+                                    <th>QTY</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="t-body">
+                                <tr class="table-row">
+                                    <td class="btn-wrapper"><span class="drag-btn"><i class="ri-draggable"></i></span></td>
+                                    <td><input type="text" class="form-input" placeholder="Enter Item" id="item_name"></td>
+                                    <td><input type="text" class="form-input" placeholder="Description" id="description"></td>
+                                    <td><input type="number" class="form-input" placeholder="Rate" id="rate"></td>
+                                    <td><input type="number" class="form-input" value="1" placeholder="Quantity" id="quantity"></td>
+                                    <td><input type="number" class="form-input" placeholder="Amount" id="amount"></td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="btn-wrapper"><span class="drag-btn"><i class="ri-draggable"></i></span></td>
+                                    <td><input type="text" class="form-input" placeholder="Enter Item" id="item_name"></td>
+                                    <td><input type="text" class="form-input" placeholder="Description" id="description"></td>
+                                    <td><input type="number" class="form-input" placeholder="Rate" id="rate"></td>
+                                    <td><input type="number" class="form-input" value="1" placeholder="Quantity" id="quantity"></td>
+                                    <td><input type="number" class="form-input" placeholder="Amount" id="amount"></td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="btn-wrapper"><span class="drag-btn"><i class="ri-draggable"></i></span></td>
+                                    <td><input type="text" class="form-input" placeholder="Enter Item" id="item_name"></td>
+                                    <td><input type="text" class="form-input" placeholder="Description" id="description"></td>
+                                    <td><input type="number" class="form-input" placeholder="Rate" id="rate"></td>
+                                    <td><input type="number" class="form-input" value="1" placeholder="Quantity" id="quantity"></td>
+                                    <td><input type="number" class="form-input" placeholder="Amount" id="amount"></td>
+                                </tr>
+                                <tr><td colspan="6" class="btn-wrapper"><button type="button" class="btn btn-theme-text">Add Item</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- ! Bill main form end -->
+                </div>
+
+                <div class="form-wrapper third">
+                    <h2>Invoice Information & Payment</h2>
+                    <div class="input-wrapper">
+                        <label for="send_to" class="form-label">Send To</label>
+                        <input type="text" class="form-input" id="send_to">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-wrapper half">
+                            <label for="issue_date" class="form-label">Issue Date</label>
+                            <input type="date" class="form-input" id="issue_date">
+                        </div>
+                        <div class="input-wrapper half">
+                            <label for="due_date" class="form-label">Due Date</label>
+                            <input type="date" class="form-input" id="due_date">
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <span>Subtotal</span>
+                        <span>00.00</span>
+                    </div>
+                    <div class="d-flex">
+                        <span>Tax</span>
+                        <span>0.00</span>
+                    </div>
+                    <div class="btn-wrapper">
+                        <button type="button" class="btn" title="Add Discount">Add Discount</button>
+                    </div>
+                    <div class="d-flex footer">
+                        <span>Total</span>
+                        <span>00.00</span>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <script src="invoice.js"></script>
+</body>
+</html>

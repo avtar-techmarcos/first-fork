@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Load More Example</title>
+<style>
+.text-heavy {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card-img {
+  width:35%;
+  height: 300px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+#loadMoreBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+	
+
+
+</style>
+</head>
+<body>
+
+<section class="wrapper load-more-section">
+  <h2 class="text-heavy">Content will be dynamically loaded here!</h2>
+  <div class="row" id="content">
+    <!-- Content will be dynamically loaded here -->
+  </div>
+  <button id="loadMoreBtn">Load More</button>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  let page = 1;
+  const perPage = 5;
+
+  function loadMore() {
+    $.ajax({
+      url: 'https://api.unsplash.com/photos/',
+      type: 'GET',
+      data: {
+        client_id: '1dH-wBNc_qAFX3BVOBv72mQwlHX3OCx9DhE2fQbCB3A',
+        page: page,
+        per_page: perPage
+      },
+      success: function(response) {
+        response.forEach(function(photo) {
+          let card = $('<div>', { class: 'column' }).html(`<img class="card-img" src="${photo.urls.regular}" alt="${photo.user.bio}">`);
+          $('#content').append(card);
+        });
+        page++;
+      },
+      error: function(xhr, status, error) {
+        console.error('Error loading content:', error);
+      }
+    });
+  }
+
+  loadMore(); // Initial load
+
+  $('#loadMoreBtn').click(function() {
+    loadMore();
+  });
+});
+
+</script>
+</body>
+</html>

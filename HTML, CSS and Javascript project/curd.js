@@ -38,17 +38,19 @@
 
         var table = document.getElementById('tbody');
 
-        table.innerHTML = '<tr><th>Select</th><th>Name</th><th>Class</th><th>Email</th><th>Action</th></tr>';
+        table.innerHTML ='';
 
         for (var i = 0; i < entries.length; i++) {
             var entry = entries[i];
             var row = table.insertRow(-1);
-
-            var nameCell = row.insertCell(0);
-            var classCell = row.insertCell(1);
-            var emailCell = row.insertCell(2);
-            var actionCell = row.insertCell(3);
-
+			
+			var Selectcell = row.insertCell(0);
+            var nameCell = row.insertCell(1);
+            var classCell = row.insertCell(2);
+            var emailCell = row.insertCell(3);
+            var actionCell = row.insertCell(4);
+			
+			Select.cell.innerHTML = `<input type=chackbox>`;
             nameCell.innerHTML = entry.name;
             classCell.innerHTML = entry.class;
             emailCell.innerHTML = entry.email;
